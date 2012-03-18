@@ -152,6 +152,10 @@ static void print_graph_overhead(struct trace_seq *s,
 	trace_seq_printf(s, "  ");
 }
 
+#ifndef MIN
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#endif
+
 static void print_graph_duration(struct trace_seq *s, unsigned long long duration)
 {
 	unsigned long usecs = duration / 1000;
