@@ -61,7 +61,8 @@ intermediates := $(call local-intermediates-dir)
 
 GEN := $(intermediates)/tc_version.h
 
-$(GEN) :
+$(GEN) : $(LOCAL_PATH)/Android.mk
+	mkdir -p $(dir $@)
 	echo "#define VERSION_CODE 258" > $@
 	echo "#define EXTRAVERSION  0" >> $@
 	echo "#define VERSION_STRING \"1.2.0\"" >> $@
