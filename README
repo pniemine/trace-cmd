@@ -35,3 +35,16 @@ mkdir $HOME/test-trace
 make prefix=$HOME/test-trace
 make prefix=$HOME/test-trace install
 
+Android:
+
+Put the trace-cmd to external directory in Android source tree.
+
+BUILDING:
+
+Setup android build with lunch.
+Change to external/trace-cmd directory.
+Run mm to build the directory
+
+INSTALL:
+	adb remount
+	adb sync
